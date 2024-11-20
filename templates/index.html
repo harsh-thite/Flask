@@ -18,7 +18,7 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">MyTodo</a>
+        <a class="navbar-brand" href="/">MyTodo</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -76,7 +76,7 @@
       </div>
     </nav>
     <div class="container">
-      <form>
+      <form action="/" method="POST">
         <fieldset>
           <legend>Add a Todo</legend>
           <div class="mb-3">
@@ -84,8 +84,10 @@
             <input
               type="text"
               id="title"
+              name="title"
               class="form-control"
               placeholder="Enter Title"
+              required
             />
           </div>
           <div class="mb-3">
@@ -93,8 +95,12 @@
             <input
               type="text"
               id="desc"
+              name="desc"
               class="form-control mb-3"
-              placeholder="Enter Description"/>
+              placeholder="Enter Description"
+              required
+            />
+          </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </fieldset>
       </form>
