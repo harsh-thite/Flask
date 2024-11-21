@@ -28,10 +28,11 @@ def hello_world():
     return render_template('index.html', allTodo=allTodo)
 
 
-@app.route('/update')
-def update():
-    allTodo = Todo.query.all()
-    return "This is products page"
+@app.route('/update/<int:sno>')
+def update(sno):
+    todo = Todo.query.filter_by(sno=sno).first()
+    return render_template("update.html", todo=todo)
+
 
 
 @app.route('/delete/<int:sno>')
